@@ -122,8 +122,8 @@ enableEmoji = true
 [menu]
   # Configure header 
   [[menu.header]]
-    name = "About"
-    title = "Just little thing about me!"
+    name = "Sobre"
+    title = "Um pouco sobre mim!"
     url = "/about/"
     weight = 1
   [[menu.header]]
@@ -132,17 +132,17 @@ enableEmoji = true
     url = "/blog/"
     weight = 2
   [[menu.header]]
-    name = "Projects"
-    title = "My Projects!"
+    name = "Projetos"
+    title = "Meus Projetos!"
     url = "/project/"
     weight = 3
   [[menu.header]]
-    name = "Education"
-    title = "My Education"
+    name = "Educação"
+    title = ""
     url = "/talk/"
     weight = 4
   [[menu.header]]
-    name = "Experience"
+    name = "Experiência"
     title = "Experiences"
     url = "/collection/"
     weight = 5

@@ -1,11 +1,11 @@
 ---
 ## Configure sidebar content in narrow column
 author: "Diogo Vieri"
-role: "Social Media:"
+role: "Social:"
 avatar_shape: rounded # circle, square, rounded, leave blank to exclude
 show_social_links: true # specify social accounts in site config
 audio_link_label: "" # leave blank to exclude
-link_list_label: "Interests" # bookmarks, elsewhere, etc.
+link_list_label: "Interesses" # bookmarks, elsewhere, etc.
 link_list:
 - name: R
   url: https://www.r-project.org/

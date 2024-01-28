@@ -3,13 +3,14 @@
 text_align_right: false
 show_title_as_headline: false
 headline: |
-  Hi, my name is Diogo Vieri Bolzan.
+  Olá! Meu nome é Diogo Vieri Bolzan.
 ---
 
 <!-- this is a subheadline -->
 
-I am a student of the Statistics course at the University of Rio Grande do Sul -UFRGS
+Atualmente, sou estudante do curso de Estatística da Universidade Federal do Rio Grande do Sul - UFRGS - ao qual ingressei em 2023.
 
-My passion for statistics came long before I started college. In 2020, when I did an internship, I came into contact with some articles that made me enter the world of statistics.
+Minha paixão por estatística começou ainda antes de entrar na faculdade. Em 2020, quando fiz meu primeiro estágio, tive a oportunidade de ler alguns artigos de matemática que contia trabalhos na área de estatística.
 
-In college, the pleasure of studying calculus, linear algebra and inference made me like the course even more and want to develop myself in tools focused on statistical analysis such as `R`, `SQL` and `Python` (even though R is still my true passion)
+Já na faculdade, o prazer de estudar cálculo, álgebra Linear e Inferência me fez gostar ainda mais do curso e despertar interesse por softwares voltados para análise estatística como o `R`, `SQL` e `Python` (mesmo o R sendo minha paixão!).
+
