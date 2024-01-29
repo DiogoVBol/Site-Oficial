@@ -150,45 +150,63 @@ $\text{Como veremos futuramente o 7 não é o único autovalor para essa matriz 
 
 ```{r, echo=FALSE,warning=FALSE, comment=FALSE, message=FALSE}
 
+
 x_values <- seq(from = 0, to = 10, by = 1)
 y_values <- seq(from = 0, to = 10, by = 1)
 
 #library(tidyverse)
 #library(patchwork)
 
-fun2 <- function(x) {
- (-5 * x)/6
+fun <- function(x) {
+ x
 }
-x_valor2 <- seq(from = -5, to = 10, by =1)
-y_valor2 = sapply(x_valor2,fun2)
+x_valor <- seq(from = -5, to = 10, by =1)
+y_valor = sapply(x_valor,fun)
 
+library(showtext)
+
+font_add_google("Bangers", "Bangers")
+
+showtext_auto()
 
 
 g1 <- ggplot(data = data.frame(x = x_values, y = y_values), aes(x,y)) +
-  annotate("segment", x = 0, y = 0, xend = 0, yend = 1, arrow = arrow(length = unit(0.3,"cm"))) +
-  annotate("segment", x = 0, y = 0, xend = 1, yend = 0, arrow = arrow(length = unit(0.3,"cm"))) +
-  annotate("segment", x = 0, y = 0, xend = 1, yend = 1, arrow = arrow(length = unit(0.3,"cm"))) +
-  geom_line(data = data.frame(x = x_valor, y = y_valor), colour = "red", alpha = 0.7) +
-  annotate("segment", x = 0, y = 0, xend = -6/5, yend = 1, arrow = arrow(length = unit(0.3,"cm"))) +
-  geom_line(data = data.frame(x = x_valor2, y = y_valor2), colour = "blue", alpha = 0.7) +
-  scale_x_continuous(limits = c(-4,8)) +
-  scale_y_continuous(limits = c(-6,8)) +
-  theme_minimal() +
-  labs(title = "Antes da matriz")
+  geom_line(data = data.frame(x = x_valor, y = y_valor), colour = "red", alpha = 0.7, size = 1) +
+  annotate("segment",color = "seagreen1",size = 1, x = 0, y = 0, xend = 0, yend = 1, arrow = arrow(length = unit(0.3,"cm"))) +
+  annotate("segment",color = "violetred2",size = 1, x = 0, y = 0, xend = 1, yend = 0, arrow = arrow(length = unit(0.3,"cm"))) +
+  annotate("segment",color = "gold1",size = 1, x = 0, y = 0, xend = 1, yend = 1, arrow = arrow(length = unit(0.3,"cm"))) +
+  scale_x_continuous(limits = c(-1,8)) +
+  scale_y_continuous(limits = c(-1,8)) +
+  theme(plot.background = element_rect(fill = "#2E2E2E", color = "#2E2E2E", linewidth = 2),
+        panel.background = element_rect(fill = "#2E2E2E", color = "#2E2E2E", linewidth = 2),
+        panel.grid = element_blank(),
+        axis.title.x = element_text(vjust = 2, size = 30,color = "#F5F5DC",face = "bold.italic"),
+        axis.title.y = element_text(vjust = 2, size = 30,color = "#F5F5DC",face = "bold.italic"),
+        plot.title = element_text(family = "Bangers",hjust = 0.5, size = 40, color = "#F5F5DC"),
+        axis.text = element_text(color = "#F5F5DC", size = 12)) +
+  labs(title = "Antes da matriz",
+       x = "Variável independente (x)",
+       y = "Valores Observados (f(x))")
 
 g3 <- ggplot(data = data.frame(x = x_values, y = y_values), aes(x,y)) +
-  annotate("segment", x = 0, xend = 1, y = 0, yend = 5,arrow = arrow(length = unit(0.3, "cm"))) +
-  annotate("segment", x = 0, y = 0, xend = 6, yend = 2, arrow = arrow(length = unit(0.3,"cm"))) +
-  annotate("segment", x = 0, y = 0, xend = 7, yend = 7, arrow = arrow(length = unit(0.3,"cm"))) +
+  annotate("segment",color = "seagreen1",size = 1, x = 0, xend = 1, y = 0, yend = 5,arrow = arrow(length = unit(0.3, "cm"))) +
+  annotate("segment",color = "violetred2",size = 1, x = 0, y = 0, xend = 6, yend = 2, arrow = arrow(length = unit(0.3,"cm"))) +
+  annotate("segment",color = "gold1",size = 1, x = 0, y = 0, xend = 7, yend = 7, arrow = arrow(length = unit(0.3,"cm"))) +
   geom_line(data = data.frame(x = x_valor, y = y_valor), colour = "red", alpha = 0.7) +
-  annotate("segment", x = 0, y = 0, xend = 24/5, yend = -4, arrow = arrow(length = unit(0.3,"cm"))) +
-  geom_line(data = data.frame(x = x_valor2, y = y_valor2), colour = "blue", alpha = 0.7) +
-  scale_x_continuous(limits = c(-4, 8)) +
-  scale_y_continuous(limits = c(-6,8)) +
-  theme_minimal() +
-  labs(title = "Matriz Com autovetor e autovalor")
+  scale_x_continuous(limits = c(-1, 8)) +
+  scale_y_continuous(limits = c(-1,8)) +
+  theme(plot.background = element_rect(fill = "#2E2E2E", color = "#2E2E2E", linewidth = 2),
+        panel.background = element_rect(fill = "#2E2E2E", color = "#2E2E2E", linewidth = 2),
+        panel.grid = element_blank(),
+        axis.title.x = element_text(vjust = 2, size = 30,color = "#F5F5DC",face = "bold.italic"),
+        axis.title.y = element_text(vjust = 2, size = 30,color = "#F5F5DC",face = "bold.italic"),
+        plot.title = element_text(family = "Bangers",hjust = 0.5, size = 40, color = "#F5F5DC"),
+        axis.text = element_text(color = "#F5F5DC", size = 12)) +
+  labs(title = "Matriz Autovetor e Autovalor",
+       x = "Variável independente (x)",
+       y = "Valores Observados (f(x))")
 
-g1 + g3 
+g1 + g3 + plot_layout(axes = "collect")
 ```
 
 $\text{Verifique se v é autovetor de A:}$
