@@ -1,4 +1,4 @@
-baseURL = "https://www.diogovieri.org/"
+baseURL = "https://diogo-vieri.netlify.app/"
 theme = "hugo-apero"
 languageCode = "en"
 title = "Diogo Vieri"
