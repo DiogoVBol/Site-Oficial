@@ -11,6 +11,19 @@ categories:
   - R
 # layout options: single or single-sidebar
 layout: single-sidebar
+links:
+- icon: door-open
+  icon_pack: fas
+  name: Banco de Dados
+  url: https://allisonhorst.github.io/palmerpenguins/
+- icon: github
+  icon_pack: fab
+  name: GitHub - Projeto
+  url: https://github.com/davi-dokasi/palmer-penguins-research?tab=readme-ov-file
+- icon: globe
+  icon_pack: fas
+  name: Site - Apresentação
+  url: https://nimrodds.quarto.pub/club-penguin-palmer-penguins/#/introdu%C3%A7%C3%A3o
 ---
 
 ![Logo do trabalho](featured-hex.png)
