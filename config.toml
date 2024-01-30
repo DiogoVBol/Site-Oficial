@@ -139,7 +139,7 @@ enableEmoji = true
   [[menu.header]]
     name = "Educação"
     title = "Educação"
-    url = "/talk/"
+    url = "/educacao/"
     weight = 4
   [[menu.header]]
     name = "Experiência"

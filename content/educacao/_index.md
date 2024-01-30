@@ -1,8 +1,8 @@
 ---
-title: Talks that Last
+title: Ensino!
 description: |
-  This is a list for your talks, workshops, or other events with a time, date, and place.
-author: "The R Markdown Team @RStudio"
+  Cursos, projetos de extensão e faculdade!
+author: "Diogo Vieri Bolzan"
 show_post_thumbnail: true
 show_author_byline: true
 show_post_date: true
@@ -23,7 +23,7 @@ sidebar:
     to edit this content. 
   author: "The R Markdown Team @RStudio"
   text_link_label: Subscribe via RSS
-  text_link_url: /talk/index.xml
+  text_link_url: /educacao/index.xml
   show_sidebar_adunit: false # show ad container
 
 # set up common front matter for all pages inside blog/
@@ -36,7 +36,7 @@ cascade:
   # for single-sidebar layout
   sidebar:
     text_link_label: View recent talks
-    text_link_url: /talk/
+    text_link_url: /educacao/
     show_sidebar_adunit: false # show ad container
 ---
 
