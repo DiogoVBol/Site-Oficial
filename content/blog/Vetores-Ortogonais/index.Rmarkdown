@@ -12,6 +12,7 @@ categories:
   - Álgebra Linear
   - R
   - Regressão Linear
+  - Latec
 layout: single
 ---
 
