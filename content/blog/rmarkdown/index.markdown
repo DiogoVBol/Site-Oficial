@@ -11,6 +11,7 @@ tags:
 categories:
   - Álgebra Linear
   - R
+  - Latec
 layout: single
 ---
 

@@ -1,9 +1,9 @@
 ---
-title: A Blog That Works
+title: Ideias e Resumos
 description: |
   This is a fully featured blog that supports categories, 
   tags, series, and pagination.
-author: "The R Markdown Team @RStudio"
+author: "Diogo Vieri Bolzan"
 show_post_thumbnail: true
 thumbnail_left: true # for list-sidebar only
 show_author_byline: true
@@ -14,21 +14,18 @@ layout: list-sidebar # list, list-sidebar, list-grid
 
 # for list-sidebar layout
 sidebar: 
-  title: A Sidebar for Your Thoughts
+  title: Ideias e Resumos!
   description: |
-    This is a fully featured blog that supports categories,
-    tags, series, and pagination. Even this sidebar offers 
-    a ton of customizations.
+    Essa é um área para compartilhar algumas ideias, resumos e análises!
     
-    Check out the _index.md file in the /blog folder 
-    to edit this content. 
-  author: "The R Markdown Team @RStudio"
-  text_link_label: Subscribe via RSS
-  text_link_url: /index.xml
+    *"Consultar o estatístico depois que um experimento terminar é muitas vezes apenas pedir a ele para realizar um exame Pós Morte. Ele pode dizer que o experimento morreu."* 
+      
+      *Sir Ronald Aylmer Fisher, 1938.*
+  author: "Diogo Vieri Bolzan"
   categories_link: true
-  series_link: true
-  tags_link: true
-  show_sidebar_adunit: true # show ad container
+  series_link: false
+  tags_link: false
+  show_sidebar_adunit: false # show ad container
 
 # set up common front matter for all pages inside blog/
 cascade:
