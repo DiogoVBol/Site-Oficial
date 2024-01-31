@@ -1,21 +1,19 @@
 ---
-title: "Create a Collection"
-subtitle: "A collection, minus the blog."
+title: "Experiência Profissional"
+subtitle: ""
 description: |
-  Sometimes you want a souped-up series- a bundle of related pages 
-  meant to be read in sequence. This section is like a blog series, 
-  minus the blog.
-author: Alison Hill
+  Estágios e experiências durante a vida profissional!
+author: Diogo Vieri Bolzan
 show_post_thumbnail: true
 thumbnail_left: false # for list-sidebar only
 show_author_byline: false
 show_post_date: false
 # for listing page layout
-layout: list-sidebar # list, list-sidebar
+layout: list # list, list-sidebar
 
 # set up common front matter for all individual pages in series
 cascade:
-  layout: single-series 
+  layout: single 
   sidebar:
     title: "Create a Collection"
     author: Alison Hill
