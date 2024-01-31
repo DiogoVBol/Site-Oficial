@@ -18,3 +18,5 @@ Experiência:
 
 Viagem junto a FISK para [Snow Valley](https://www.facebook.com/snowvalleyexperiencepark/) pra aperfeiçoar a comunicação na língua!
 
+![](fisk.jpg)
+
