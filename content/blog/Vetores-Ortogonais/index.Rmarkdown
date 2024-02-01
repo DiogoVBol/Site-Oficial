@@ -250,14 +250,12 @@ $\text{O problema de minimizar é descobrir qual a reta que mais se aproxíma pa
 
 $\text{Temos os seguintes dados:}$
 
-$$
-\left(\begin{array}{cc} 
+$$\left(\begin{array}{cc} 
 x & y\\
 0 & 0\\
 1 & 2\\
 2 & 5\\
-\end{array}\right)
-$$ 
+\end{array}\right)$$ 
 
 $\text{Ou seja:}$
 
