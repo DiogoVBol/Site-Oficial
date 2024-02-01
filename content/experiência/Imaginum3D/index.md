@@ -5,6 +5,11 @@ subtitle: ""
 excerpt: "Estágiario meio período em Imaginum3D - São Lourenço do Oeste"
 date: 2019-08-01
 draft: false
+links:
+- icon: door-open
+  icon_pack: fas
+  name: Projeto
+  url: https://www.instructables.com/3D-Printed-500x400mm-Router-CNC/
 ---
 
 Estágiario em [Imaginum3D](https://www.facebook.com/imaginum3d/)
