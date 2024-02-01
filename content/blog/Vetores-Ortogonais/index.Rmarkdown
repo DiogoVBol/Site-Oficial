@@ -210,10 +210,11 @@ $$\cdot \cdot \cdot w_p = x_p - \frac{x_p \cdot w_1}{w_1 \cdot w_1}w_1-\frac{x_p
 
 $\text{Então }\{v_1,v_2...v_n\} \text{ é uma base ortogonal para W. Além disso o }Span\{v_1,v_2...v_k\} \text{ e } Span\{x_1,x_2...x_k\} \text{ são iguais para }1 \leq k \leq p.$
 
-$\text{Exemplo Lista  7 ex. 8: $
+$\text{Exemplo Lista  7 ex. 8:}$
 
-$Considere os vetores v1 = (0, 4, 2), v2 = (5, 6, −7) e v3 = (4, −1, 2). A letra a pede para mostrar que é uma base,}$
-$\text{vamos assumir que já foi feito isso e ir para letra b.}$
+$\text{Considere os vetores v1 = (0, 4, 2), v2 = (5, 6, −7) e v3 = (4, −1, 2). A letra a pede para mostrar que é uma base.}$
+
+$\text{Vamos assumir que já foi feito isso e ir para letra b.}$
 
 $\text{b) Use o algoritmo de Gram-Schmidt para obter uma base ortogonal de R3, a partir da base B.}$
 
@@ -250,30 +251,36 @@ $\text{O problema de minimizar é descobrir qual a reta que mais se aproxíma pa
 
 $\text{Temos os seguintes dados:}$
 
-$$\left(\begin{array}{cc} 
-x & y\\
-0 & 0\\
-1 & 2\\
-2 & 5\\
-\end{array}\right)$$ 
+
+$$\left(\begin{array}{cc}
+x & y \\
+0 & 0 \\
+1 & 2 \\
+2 & 5 \\
+\end{array}\right)$$
+
 
 $\text{Ou seja:}$
 
-$$\left(\begin{array}{cc} 
-y(0) = a+b.0 = 0\\
-y(1) = a+b.1 = 2\\
-y(2) = a+b.2 = 5\\
-\end{array}\right)$$ 
+
+$$\left(\begin{array}{c}
+y(0)=a+b.0=0 \\
+y(1)=a+b.1=2 \\
+y(2)=a+b.2=5 \\
+\end{array}\right)$$
+
 
 $\text{Dito isso de outra forma, precisamos resolver o sistema:}$
 
-$$\begin{cases}
-    1a + 0b = 0\\
-    1a + 1b = 2\\
-    1a + 2b = 5\\
-\end{cases}$$ 
 
-$$ A = \left(\begin{array}{cc}
+$$\begin{cases}
+  1a+0b=0 \\
+  1a+1b=2 \\
+  1a+2b=5 \\
+\end{cases}$$
+
+
+$$A = \left(\begin{array}{cc}
     1  & 0 \\
     1  & 1\\
     1  & 2\\
@@ -281,7 +288,7 @@ $$ A = \left(\begin{array}{cc}
     0   \\
     2  \\
     5  \\
-\end{array}\right)$$ 
+\end{array}\right)$$
 
 $\text{Logo, basta resolver esse sistema, porém segundo Definição 7.4.2, usada pelo professor}$
 
@@ -302,7 +309,8 @@ $$A^{t}A= \left(\begin{array}{cc}
 \end{array}\right)$$
 
 $\text{Lembre-se para cálcular essa multiplicação faça todos elementos da primeira linha }$
-${\text{da primeira matriz vezes a primeira coluna da segunda matriz...}$
+
+$\text{da primeira matriz vezes a primeira coluna da segunda matriz...}$
 
 $$A^{t}b= \left(\begin{array}{cc}
   1 & 1 & 1 \\
