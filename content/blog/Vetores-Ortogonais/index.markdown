@@ -220,7 +220,7 @@ y(2)=a+b.2=5 \\
 
 `\(\text{iremos chamar de solução para mínimos quadrados toda solução do sistema de equações lineares } Ax = proj_{col A}b\)`
 
-`$$\text{Vamos usar a fórmual: }proj_{col A}b = (A^{t}A)x=A^{t}b$$`
+`$$\text{Vamos usar a fórmula: }proj_{col A}b = (A^{t}A)x=A^{t}b$$`
 
 `$$A^{t}A= \left(\begin{array}{cc}
   1 & 1 & 1 \\

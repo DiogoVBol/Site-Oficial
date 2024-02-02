@@ -1,0 +1,244 @@
+---
+title: "Simples aplicação de Mínimos quadráticos"
+subtitle: ""
+excerpt: "Uma aplicação de mínimos quadráticos em Álgebra Linear!"
+date: 2024-02-02
+author: "Diogo Vieri"
+draft: false
+images:
+series:
+tags:
+categories:
+  - Álgebra Linear
+  - R
+  - Latec
+layout: single
+---
+
+## Motivação!
+
+A motivação para essa aplicação surgiu após ver o tema do dia 09/01/2024 do [TidyTuesday!](https://github.com/rfordatascience/tidytuesday)
+
+Basicamente, se trata de fazer uma análise de um data base para responder a seguinte pergunda: ["As datas de nascimento ainda são um destino para os jogadores canadenses da NHL?"](https://jlaw.netlify.app/2023/12/04/are-birth-dates-still-destiny-for-canadian-nhl-players/), tema bastante discutido no link!
+
+Os dados foram coletados do [Statistics Canada, NHL team list endpoint e NHL API](https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1310041501&pickMembers%5B0%5D=3.1&cubeTimeFrame.startYear=1991&cubeTimeFrame.endYear=2022&referencePeriods=19910101%2C20220101)
+
+## Análise
+
+Para ter uma ideia do banco de dados:
+
+```{r, echo=FALSE,warning=FALSE, comment=FALSE, message=FALSE}
+library(tidyverse)
+library(cowplot)
+library(patchwork)
+library(showtext)
+library(matlib)
+
+nhl_player_births <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-01-09/nhl_player_births.csv')
+
+knitr::kable(na.omit(nhl_player_births)[sample(nrow(na.omit(nhl_player_births)), 10), 1:ncol(nhl_player_births)], format = "pipe")
+```
+
+A análise que irá ser feita, usará apenas a coluna birth_month que representa o mês de nascimento do jogador!
+
+```{r, echo=FALSE,warning=FALSE, comment=FALSE, message=FALSE}
+df_nhl <- nhl_player_births |> 
+  select(birth_month)
+
+df_nhl <- data.frame(table(df_nhl))
+
+df_nhl <- df_nhl |> 
+  mutate(birth_month = case_when(
+    birth_month == 1 ~ "Jan",
+    birth_month == 2 ~ "Fev",
+    birth_month == 3 ~ "Mar",
+    birth_month == 4 ~ "Abr",
+    birth_month == 5 ~ "Mai",
+    birth_month == 6 ~ "Jun",
+    birth_month == 7 ~ "Jul",
+    birth_month == 8 ~ "Ago",
+    birth_month == 9 ~ "Set",
+    birth_month == 10 ~ "Out",
+    birth_month == 11 ~ "Nov",
+    birth_month == 12 ~ "Dez"
+  ))
+
+df_nhl$birth_month <- factor(df_nhl$birth_month, levels = c("Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"))
+
+knitr::kable(df_nhl)
+```
+
+Como queremos transformar esses dados em formato de matriz para aplicar técnicas da Álgebra Linear vamos entender esse data base como uma matriz:
+
+$$\left(\begin{array}{cc}
+  x & y \\
+  1 & 876 \\
+  2 & 819 \\
+  3 & 834 \\
+  4 & 796 \\
+  5 & 783 \\
+  6 & 692 \\
+  7 & 696 \\
+  8 & 602 \\
+  9 & 639 \\
+  10 & 620 \\
+  11 & 561 \\
+  12 & 556 \\
+  \end{array}\right) = A = 
+  \left(\begin{array}{cc}
+  1 & 1 \\
+  1 & 2 \\
+  1 & 3 \\
+  1 & 4 \\
+  1 & 5 \\
+  1 & 6 \\
+  1 & 7 \\
+  1 & 8 \\
+  1 & 9 \\
+  1 & 10 \\
+  1 & 11 \\
+  1 & 12 \\
+  \end{array}\right),B = 
+  \left(\begin{array}{c}
+  876 \\
+  819 \\
+  834 \\
+  796 \\
+  783 \\
+  692 \\
+  696 \\
+  602 \\
+  639 \\
+  620 \\
+  561 \\
+  556 \\
+  \end{array}\right)$$
+
+Conforme visto em [Ortogonalidade e Mínimos quadráticos](https://diogovieri.rbind.io/blog/vetores-ortogonais/):
+
+$$\text{Vamos usar a fórmula: }proj_{col A}b = (A^{t}A)x=A^{t}b$$
+
+$$A^{t}A = \left(\begin{array}{cc}
+  1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+  \end{array}\right)   \left(\begin{array}{cc}
+  1 & 1 \\
+  1 & 2 \\
+  1 & 3 \\
+  1 & 4 \\
+  1 & 5 \\
+  1 & 6 \\
+  1 & 7 \\
+  1 & 8 \\
+  1 & 9 \\
+  1 & 10 \\
+  1 & 11 \\
+  1 & 12 \\
+  \end{array}\right) =   \left(\begin{array}{cc}
+  12 & 78 \\
+  78 & 650 \\
+  \end{array}\right)$$
+  
+Temos ainda que:
+  
+$$A^{t}b = \left(\begin{array}{cc}
+  1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+  1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 \\
+  \end{array}\right) \left(\begin{array}{c}
+  876 \\
+  819 \\
+  834 \\
+  796 \\
+  783 \\
+  692 \\
+  696 \\
+  602 \\
+  639 \\
+  620 \\
+  561 \\
+  556 \\
+  \end{array}\right) = 
+  \left(\begin{array}{c}
+  8474 \\
+  50749 \\
+  \end{array}\right)$$
+  
+Agora escalonamos a matriz:
+
+$$\left(\begin{array}{cc|c}
+  78 & 650 & 50749 \\
+  12 & 78 & 8474 \\
+  \end{array}\right) = \left(\begin{array}{cc|c}
+  0 & 1 & -30.29 \\
+  1 & 0 & 903.07 \\
+  \end{array}\right)$$
+  
+Logo temos a nossa reta y = -30.29x + 903.07
+
+
+```{r, echo=FALSE,warning=FALSE, comment=FALSE, message=FALSE}
+A <- matrix(data = c(1,1,1,1,1,1,1,1,1,1,1,1,1,2,3,4,5,6,7,8,9,10,11,12), nrow = 12, ncol = 2)
+b <- matrix(data = c(876,819,834,796,783,692,696,602,639,620,561,556), ncol = 1, nrow = 12)
+
+resultado <- t(A) %*% A
+
+resultado_dois <- t(A) %*% b
+
+matriz1 <- matrix(resultado, nrow = 2,ncol = 2)
+matriz2 <- matrix(resultado_dois, nrow = 2,ncol = 1)
+
+matriz_juntada_colunas <- cbind(matriz1, matriz2)
+#gaussianElimination(matriz_juntada_colunas)
+
+fun <- function(x) {
+  v <- -30.29 * x + 903.07
+  return(v)
+}
+
+x1 <- seq(from = 1, to = 12, by = 0.1)
+y1 <- sapply(x1, fun)
+
+```
+
+```{r, echo=FALSE,warning=FALSE, comment=FALSE, message=FALSE}
+font_add_google("Playfair Display", "Playfair")  
+font_add_google("Bangers", "Bangers")
+showtext.auto()
+
+a <- ggplot(df_nhl, aes(x = birth_month, y = Freq)) +
+  geom_point() +
+  geom_line(data = data.frame(x = x1,y = y1), aes(x,y), linewidth = 1.3, color = "firebrick") +
+  labs(x = NULL,
+       y = "Quantidade de Nascimentos") +
+  geom_text(x = 8.5,
+            y = 840,
+            label = "Relação da Quantidade\nde Nascimentos por mês",
+            lineheight = 0.5,
+            size = 20,
+            family = "Bangers",
+            color = "#1F1F1F") +
+  geom_text(x = 8.5,
+            y = 780,
+            label = "Total de atletas da NHL que\nnasceram em cada mês (1879-2005)",
+            lineheight = 0.4,
+            size = 9,
+            family = "Playfair",
+            color = "#1F1F1F") +
+  geom_text(x = 8.5,
+            y = 750,
+            label = "y = -30.29x + 903.07",
+            lineheight = 1,
+            size = 8,
+            family = "Playfair",
+            color = "#1F1F1F") +
+  theme(axis.title = element_text(family = "Playfair",size = 25, color = "firebrick"),
+        axis.text = element_text(family = "Playfair",color = "#030303", size = 20),
+        axis.text.x = element_text(vjust = 1, hjust = 1, size = 20),
+        panel.background = element_rect(fill = "lemonchiffon2", color = "lemonchiffon2", linewidth = 2),
+        plot.background = element_rect(fill = "lemonchiffon2"))
+
+a + plot_annotation(caption = "Tidy Tuesday: A weekly social data project. \nStatistics Canada e NHL team list endpoint.",
+                    theme = theme(plot.background = element_rect(fill = "lemonchiffon2"),
+                                  plot.caption = element_text(family = "Playfair", size = 15,lineheight = 0.4)))
+
+```
