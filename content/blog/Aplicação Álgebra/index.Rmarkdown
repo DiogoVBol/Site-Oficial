@@ -240,5 +240,4 @@ a <- ggplot(df_nhl, aes(x = birth_month, y = Freq)) +
 a + plot_annotation(caption = "Tidy Tuesday: A weekly social data project. \nStatistics Canada e NHL team list endpoint.",
                     theme = theme(plot.background = element_rect(fill = "lemonchiffon2"),
                                   plot.caption = element_text(family = "Playfair", size = 15,lineheight = 0.4)))
-
 ```
