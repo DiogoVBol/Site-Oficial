@@ -27,4 +27,4 @@ Projetos realizados:
 
 - Elaboração de Projetos de padrão de entrada residenciais elétricos - AutoCAD - AutoDesk!
 
-- Por fim deixo meus agradecimentos pessoais ao Guilherme Maximiliano Negri, dono da empresa, que me deu a oportunidade e foi uma das pessoas em minha vida com quem mais aprendi!!
+- Por fim deixo meus agradecimentos pessoais ao Guilherme Maximiliano Negri, dono da empresa, que me deu a oportunidade e foi uma das pessoas em minha vida com quem mais aprendi!
