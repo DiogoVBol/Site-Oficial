@@ -515,9 +515,7 @@ ggplot(data = data.frame(x = x3, y = y3), aes(x,y)) +
    geom_text(aes(x = 1, y = -120,
                 label = "ERRO = 0"),
             stat = "unique", family = "Bangers",
-            size = 20, color = "black") +
-  geom_line(data = data.frame(x = dados_1, y = dados_2), aes(x, y), color = "black") +
-  geom_line(data = data.frame(x = dados_3, y = dados_4), aes(x, y), color = "black")
+            size = 20, color = "black")
 ```
 
 ## Erro de mínimos Quadrados
