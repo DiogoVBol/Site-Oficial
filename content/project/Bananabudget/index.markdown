@@ -3,7 +3,7 @@ title: "BananaBudget"
 subtitle: ""
 excerpt: "Análise Exploratória de gastos do mercado com o R com foco em visualização"
 date: 2024-02-02
-author: "Diogo Vieri"
+author: "Diogo Vieri e Gustavo Frosi"
 draft: false
 images:
 series:
