@@ -21,7 +21,7 @@ layout: single
 
 *Você já pensou qual seu gasto no mercado? Quais os produtos que mais compra? Qual a frequência que vai ao mercado?*
 
-*Eu e o Gustavo já!*
+*Eu e o [Gustavo](https://gustavofrosi.com.br/) já!*
 
 Neste texto, vamos mostrar como manipulamos notas fiscais de mercado para responder às questões iniciais por meio da programação. Morando em Porto Alegre com mais duas pessoas (totalizando quatro), é fundamental ter um controle de gastos. Após vários meses registrando todos os gastos no mercado, surgiu a seguinte pergunta: “Será que podemos identificar quais produtos compramos com maior ou menor frequência?” *(coisa de doido, né?)*. De certa forma, já sabíamos que, ao utilizar o CPF nas compras, as notas ficam armazenadas em algum lugar, mas não tínhamos certeza de onde.
 
