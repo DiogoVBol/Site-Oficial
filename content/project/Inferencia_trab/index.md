@@ -26,7 +26,7 @@ links:
   url: https://nimrodds.quarto.pub/club-penguin-palmer-penguins/#/introdu%C3%A7%C3%A3o
 ---
 
-![Logo do trabalho](featured-hex.png)
+![Logo do trabalho](hex.png)
 
 ## O Trabalho trata sobre uma análise de um banco de dados que contém observações de penguins na Antártica!
 
