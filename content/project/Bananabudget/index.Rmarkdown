@@ -470,6 +470,6 @@ knitr::include_graphics(path = "ima/plot_teste.jpeg")
 
 # **Conclusão**
 
-Nesse texto, demonstramos como é possível obter informações sobre seus gastos pessoais por meio de web scraping, manipulação e visualização de dados utilizando R e Python. As descobertas aqui foram de caráter exploratório, e uma nova análise com cunho estatístico será realizada em um post futuro. Surgem perguntas interessantes, como: Tenho um dia da semana preferido para ir ao mercado? Ou, a frequência de vezes que vou ao mercado pode prever o preço que gasto no mês? 
+Nesse texto, demonstramos como é possível obter informações sobre seus gastos pessoais por meio de web scraping, manipulação e visualização de dados utilizando R e Python. As descobertas aqui foram de caráter exploratório, e uma nova análise com cunho estatístico será realizada em um post futuro. Surgem perguntas interessantes, como: Tenho um dia da semana preferido para ir ao mercado? Ou, a frequência de vezes que vou ao mercado pode prever o preço que gasto no mês??
 
 
