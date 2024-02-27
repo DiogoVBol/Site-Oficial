@@ -28,5 +28,5 @@ Para complementar, desta vez, fiz uma aplicação em Shiny, na qual é possível
 
 Para acessar basta clicar [aqui](https://hieiic-diogo-bolzan.shinyapps.io/ShinyAPP-Penguins/).
 
-O pequeno WebApp conta com a visualização da distribuição das variáveis, possibilidade de interagir com quantas observações aparecem em um gráfico e ainda conferir o BootStrapping para diferentes tamanhos de reamostras!
+O pequeno WebApp conta com a visualização da distribuição das variáveis, possibilidade de interagir com quantas observações aparecem em um gráfico e ainda conferir o BootStrapping para diferentes tamanhos de reamostras.
 
