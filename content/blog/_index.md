@@ -32,7 +32,7 @@ cascade:
   author: "The R Markdown Team @RStudio"
   show_author_byline: true
   show_post_date: true
-  show_comments: true # see site config to choose Disqus or Utterances
+  show_comments: false # see site config to choose Disqus or Utterances
   # for single-sidebar layout
   sidebar:
     text_link_label: View recent posts
