@@ -1,0 +1,59 @@
+---
+title: "Excel - Dashboard"
+subtitle: ""
+excerpt: "Visualização de dados em dashboard utilizando Excel"
+date: 2024-04-26
+author: "Diogo Vieri"
+draft: false
+images:
+series:
+tags:
+categories:
+  - Excel
+  - Inferência
+  - Estatística Descritiva
+layout: single
+---
+
+## Excel
+
+Microsoft Excel é um editor de planilhas desenvolvido pela Microsoft. Ele possui recursos de cálculo ou computação, ferramentas gráficas, tabelas dinâmicas e uma linguagem de programação de macro chamada Visual Basic for Applications (VBA).
+O Excel é uma ferramenta muito utilizada para a organização e criação de banco de dados. Neste post, venho apresentar como utilizei o Excel para desenvolver um dashboard para tomada de decisão e controle financeiro com base em um banco de dados.
+
+## Banco de Dados
+
+O banco de dados que irei utilizar para fazer o dashboard apresenta um problema real. Trata-se de dados referentes a uma rede de supermercados que opera em 3 diferentes cidades dos Estados Unidos. Meu objetivo é organizar os dados, gerar visualizações e criar o dashboard. Mas antes, vamos dar uma olhada em todas as variáveis do banco de dados:
+
+![](img/01.png)
+
+O que, a princípio, parece uma bagunça, pode ser rapidamente transformado em forma de tabela para melhor compreensão de cada variável:
+![](img/02.png)
+
+Segue que neste banco de dados temos as seguintes variáveis:
+- City (Categórica)
+- Custumer Type (Categórica)
+- Gender (Categórica)
+- Product line (Categórica)
+- Unit Price (Contínua)
+- Quantity (Discreta)
+- Tax (Contínua)
+- Date (Categórica)
+- Time (Contínua)
+- Payment (Categórica)
+- Cogs (Contínua)
+- Buy Cost (Contínua)
+- Profit (Contínua)
+
+## Gráficos e botões
+
+Com o Excel, podemos utilizar tabelas dinâmicas para a montagem de gráficos. Uma Tabela Dinâmica é uma ferramenta poderosa para calcular, resumir e analisar os dados, permitindo visualizar comparações, padrões e tendências nos dados.
+
+Além disso, é possível criar um menu de navegação, facilitando ao usuário a transição entre as abas do arquivo. Cada retângulo funcionará como um "botão", que ao ser clicado redirecionará para outra aba do arquivo.
+
+![](img/04.png)
+
+## Dashboard
+
+Por fim, podemos criar um dashboard, reunindo todo o conhecimento adquirido até agora, proporcionando a visualização de vários gráficos em um único lugar. Isso facilita a organização e o resumo para tomar decisões dentro da empresa.
+
+![](img/05.png)
